@@ -40,12 +40,12 @@ describe('Тестирование функции getPostsByUser', () => {
 
   test('Проверка на правильность фильтрации по user_id', () => {
     const ivanPosts = getPostsByUser(user1.id);
-    expect(ivanPosts.every(post => post.user_id === user1.id)).toBe(true); // Все посты для Ивана должны иметь правильный user_id
+    expect(ivanPosts.every(post => post.user_id === user1.id)).toBe(true);
   });
 
   test('Проверка на отсутствие постов для другого пользователя', () => {
     const petrovPosts = getPostsByUser(user2.id);
-    expect(petrovPosts.some(post => post.user_id === user1.id)).toBe(false); // У Петро не должно быть постов Ивана
+    expect(petrovPosts.some(post => post.user_id === user1.id)).toBe(false);
   });
 
 });
